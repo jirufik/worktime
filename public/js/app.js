@@ -173,7 +173,10 @@ async function start() {
         await jrfws.sendMes(null, 'login', 'isBackend')
     };
     await routing();
-    await jrfws.connectToWs('ws://' + window.location.host);
+    // http
+    // await jrfws.connectToWs('ws://' + window.location.host);
+    // https
+    await jrfws.connectToWs('wss://' + window.location.host);
 
 }
 
