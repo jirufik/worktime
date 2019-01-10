@@ -174,9 +174,6 @@ async function start() {
     };
     await routing();
     await jrfws.connectToWs('ws://' + window.location.host);
-    await wait(200);
-    let saveObj = await getGlObj();
-    await showCreateNewUser(saveObj);
 
 }
 
@@ -369,6 +366,8 @@ async function routing() {
     });
     await jrfws.route('login', 'isBackend', async (data, stop) => {
         dialogLogin.isBackend = data.data;
+        let saveObj = await getGlObj();
+        await showCreateNewUser(saveObj);
     });
     await jrfws.route('login', 'encode', async (data, stop) => {
         let hashPass = data.data;
