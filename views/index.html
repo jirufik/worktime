@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons' rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.min.css" rel="stylesheet">
+    <link href="css/legend.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="img/favicon/site.webmanifest">
+    <link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <title>Worktime</title>
+</head>
+<body>
+<div id="app">
+    <v-app>
+        <v-toolbar color="indigo"
+                   class="white--text"
+                   fixed
+                   height="58"
+        >
+            <main-menu></main-menu>
+            <v-toolbar-side-icon
+                    v-show="dialogLogin.help.show"
+                    @click.stop="navigationChangeShow"
+                    class="white--text"
+            ></v-toolbar-side-icon>
+            <v-toolbar-title @click="showMainForm">
+                WORKTIME
+            </v-toolbar-title>
+        </v-toolbar>
+        <v-content style="padding: 58px 0px 45px 0px;">
+            <login></login>
+            <dialog-apply></dialog-apply>
+            <export-import></export-import>
+            <pomodoro-settings></pomodoro-settings>
+            <snackbar></snackbar>
+            <user-settings></user-settings>
+            <filter-work></filter-work>
+            <help v-if="dialogLogin.help.show"></help>
+            <v-expansion-panel
+                    v-show="dialogLogin.isLogin && !dialogLogin.help.show"
+                    expand
+                    v-model="glObj.panel">
+                <v-expansion-panel-content key="1">
+                    <h2 slot="header"
+                        :class="glObj.expansionTime.class"
+                    >{{ glObj.expansionTime.text }}</h2>
+                    <stopwatch ref="stpwtch"></stopwatch>
+                </v-expansion-panel-content>
+                <v-expansion-panel-content key="2">
+                    <h2 slot="header"
+                        :class="glObj.expansionPomodoro.class"
+                    >{{ glObj.expansionPomodoro.text }}</h2>
+                    <pomodoro ref="pmdr"></pomodoro>
+                </v-expansion-panel-content>
+                <v-expansion-panel-content key="3">
+                    <h2 slot="header" class="display-1 indigo--text">Worktime</h2>
+                    <v-layout>
+                        <v-flex pl-3>
+                            <v-btn outline
+                                   color="indigo"
+                                   @click="showFilter"
+                            >Filter</v-btn>
+                        </v-flex>
+                    </v-layout>
+                    <tasks ref="tsk"></tasks>
+                </v-expansion-panel-content>
+            </v-expansion-panel>
+        </v-content>
+        <v-footer fixed height="45">
+            <v-layout justify-center column>
+                <v-layout justify-center>
+                    Released under the&nbsp
+                    <a href="https://opensource.org/licenses/MIT"
+                       style="text-decoration:none;color:#616161;"
+                       target="_blank"
+                       class="body-2"
+                    >MIT License</a>
+                </v-layout>
+                <v-layout justify-center>
+                    {{ strFooter }}<a href="https://github.com/jirufik"
+                                        style="text-decoration:none;color:#616161;"
+                                        target="_blank"
+                                        class="body-2"
+                                     ><img src="img/logoJirufikLight.svg" width="20" height="20"
+                                           style="vertical-align: top; margin: 0 4px;">jirufik
+                                     </a>
+                </v-layout>
+            </v-layout>
+        </v-footer>
+    </v-app>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.js"></script>
+<script src="js/jrfws.js"></script>
+<script src="js/tasks.js"></script>
+<script src="js/jrftimer.js"></script>
+<script src="js/jrfstopwatch.js"></script>
+<script src="js/pomodoro.js"></script>
+<script src="js/pomodoroSettings.js"></script>
+<script src="js/pomodoro-settings-vue.js"></script>
+<script src="js/login.js"></script>
+<script src="js/login-vue.js"></script>
+<script src="js/help.js"></script>
+<script src="js/help-vue.js"></script>
+<script src="js/settings.js"></script>
+<script src="js/settings-vue.js"></script>
+<script src="js/menu.js"></script>
+<script src="js/menu-vue.js"></script>
+<script src="js/dialog.js"></script>
+<script src="js/dialog-vue.js"></script>
+<script src="js/export-import-vue.js"></script>
+<script src="js/exportImport.js"></script>
+<script src="js/snackbar.js"></script>
+<script src="js/snackbar-vue.js"></script>
+<script src="js/filter.js"></script>
+<script src="js/filter-vue.js"></script>
+<script src="js/tasks-vue.js"></script>
+<script src="js/task-vue.js"></script>
+<script src="js/stopwatch-vue.js"></script>
+<script src="js/pomodoro-vue.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

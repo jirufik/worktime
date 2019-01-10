@@ -1,0 +1,51 @@
+{
+  "name": "jrfworktime",
+  "version": "1.0.0",
+  "description": "worktime",
+  "main": "app.js",
+  "scripts": {
+    "startdev": "cross-env NODE_ENV=development node ./app.js",
+    "startprod": "cross-env NODE_ENV=production node ./app.js"
+  },
+  "keywords": [
+    "worktime",
+    "tasktime",
+    "tasktracker",
+    "worktracker",
+    "pomodoro",
+    "jrf"
+  ],
+  "author": {
+    "name": "jirufik",
+    "url": "https://github.com/jirufik"
+  },
+  "maintainers": [
+    {
+      "name": "jirufik",
+      "url": "https://github.com/jirufik"
+    }
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=8"
+  },
+  "dependencies": {
+    "jrfws": "^1.1.1",
+    "jrftimer": "^1.0.4",
+    "jrfstopwatch": "^1.0.1",
+    "jrfdb": "^1.2.3",
+    "koa": "^2.6.2",
+    "koa-views": "^6.1.5",
+    "koa-json": "^2.0.2",
+    "koa-bodyparser": "^4.2.1",
+    "koa-static": "^5.0.0",
+    "koa-router": "^7.4.0"
+  },
+  "devDependencies": {
+    "cross-env": "^5.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jirufik/worktime"
+  }
+}
