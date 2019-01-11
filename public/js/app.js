@@ -174,9 +174,9 @@ async function start() {
     };
     await routing();
     // http
-    // await jrfws.connectToWs('ws://' + window.location.host);
+    await jrfws.connectToWs('ws://' + window.location.host);
     // https
-    await jrfws.connectToWs('wss://' + window.location.host);
+    //await jrfws.connectToWs('wss://' + window.location.host);
 
 }
 
