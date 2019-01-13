@@ -2,6 +2,8 @@
 
 **Worktime** — is a web application that keeps time and cost accounting of tasks. With the possibility of using technology "Pomodoro".
 
+[Living example](https://rufus.pro/worktime/)
+
 ## Install
 
 **Install Node.js** — install [Node.js](https://nodejs.org/en/download/).

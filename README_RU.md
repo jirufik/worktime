@@ -2,6 +2,8 @@
 
 **Worktime** — это web приложение которое ведет временной и стоимостной учет задач. С возможностью применения техники "Помидор".
 
+[Живой пример](https://rufus.pro/worktime/)
+
 ## Install
 
 **Install Node.js** — установите [Node.js](https://nodejs.org/en/download/).
